@@ -17,12 +17,6 @@ const targetDisplayModeActivate = () => {
   console.log(`Performed keystroke COMMAND+F2`);
 };
 
-const turnUpVolume = (volumePercent = 100) => {
-  performOSAScriptCommand(`'set volume output volume ${volumePercent}'`);
-  console.log(`VOLUME SET TO ${volumePercent}`);
-};
-
 module.exports = {
-  targetDisplayModeActivate,
-  turnUpVolume
+  targetDisplayModeActivate
 };

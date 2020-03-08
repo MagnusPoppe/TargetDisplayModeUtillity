@@ -1,5 +1,5 @@
 const { app, Menu, Tray, globalShortcut } = require("electron");
-const { targetDisplayModeActivate, turnUpVolume } = require("./appleScript");
+const { targetDisplayModeActivate } = require("./appleScript");
 
 const SHORTCUT_FOR_ACTIVATING_DISPLAY_MODE = "CommandOrControl+F10";
 let tray = null;
@@ -10,11 +10,6 @@ app.on("ready", () => {
     {
       click: () => targetDisplayModeActivate(),
       label: "Use iMac as a display",
-      type: "normal"
-    },
-    {
-      click: () => turnUpVolume(0),
-      label: "Max volume",
       type: "normal"
     }
   ]);
