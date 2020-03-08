@@ -1,8 +1,8 @@
-const { app, Menu, Tray, globalShortcut, nativeImage } = require("electron");
+const { Menu, Tray, globalShortcut, nativeImage } = require("electron");
 const { targetDisplayModeActivate } = require("./appleScript");
 
 const APP_ICON_PATH = "./public/imac.png";
-const SHORTCUT_FOR_ACTIVATING_DISPLAY_MODE = "CommandOrControl+F10";
+const SHORTCUT_FOR_ACTIVATING_DISPLAY_MODE = "CommandOrControl+F2";
 
 const initiateTrayMenu = () => {
   const trayIcon = nativeImage.createFromPath(APP_ICON_PATH);
@@ -31,11 +31,7 @@ const registerKeyboardShortcut = () => {
   );
 };
 
-app.on("ready", () => {
-  initiateTrayMenu();
-  registerKeyboardShortcut();
-});
-
-app.on("will-quit", () => {
-  globalShortcut.unregister(SHORTCUT_FOR_ACTIVATING_DISPLAY_MODE);
-});
+module.exports = {
+  initiateTrayMenu,
+  registerKeyboardShortcut
+}
