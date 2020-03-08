@@ -1,0 +1,16 @@
+{
+  "name": "tray-target-display-mode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/tray.js",
+  "scripts": {
+    "start": "electron src/tray.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["Target", "Display", "Mode", "iMac", "2009", "2010", "2011", "2012"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.1.0"
+  }
+}
