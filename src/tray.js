@@ -1,10 +1,12 @@
-const { app, Menu, Tray, globalShortcut } = require("electron");
+const { app, Menu, Tray, globalShortcut, nativeImage } = require("electron");
 const { targetDisplayModeActivate } = require("./appleScript");
 
+const APP_ICON_PATH = "./public/imac.png";
 const SHORTCUT_FOR_ACTIVATING_DISPLAY_MODE = "CommandOrControl+F10";
 
 const initiateTrayMenu = () => {
-  const tray = new Tray("./public/imac.png");
+  const trayIcon = nativeImage.createFromPath(APP_ICON_PATH);
+  const tray = new Tray(trayIcon);
   const contextMenu = Menu.buildFromTemplate([
     {
       click: targetDisplayModeActivate,
