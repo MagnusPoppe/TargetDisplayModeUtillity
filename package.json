@@ -7,7 +7,16 @@
     "start": "electron src/tray.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Target", "Display", "Mode", "iMac", "2009", "2010", "2011", "2012"],
+  "keywords": [
+    "Target",
+    "Display",
+    "Mode",
+    "iMac",
+    "2009",
+    "2010",
+    "2011",
+    "2012"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
