@@ -1,19 +1,14 @@
 const ps = require("child_process");
 
-const F2_1 = "113";
-const F2_2 = "120";
-const COMMAND = "command down";
-const OSASCRIPT = "osascript -e ";
 
 const performOSAScriptCommand = command => {
-  const result = ps.execSync(OSASCRIPT + command);
+  const result = ps.execSync(`osascript -e '${command}'`);
   console.log(result.toString("utf-8"));
 };
 
 const targetDisplayModeActivate = () => {
-  performOSAScriptCommand(
-    `'tell application "System Events" to keystroke ${F2_2} using {${COMMAND}}'`
-  );
+  const cmd = `tell application "System Events" to key code 144 using command down`
+  performOSAScriptCommand(cmd)
   console.log(`Performed keystroke COMMAND+F2`);
 };
 
